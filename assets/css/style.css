@@ -1,0 +1,90 @@
+/* Layout inspired by Minimal Light (CC0); see THEME-LICENSE.txt. */
+:root {
+  color-scheme: light;
+  --background: #fff;
+  --text: #595959;
+  --heading: #043361;
+  --link: #167da8;
+  --strong: #222;
+  --muted: #707070;
+  --rule: #e5e5e5;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 17px/1.5 "Crimson Pro", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+a { color: var(--link); text-decoration: none; text-underline-offset: 3px; }
+a:hover { color: var(--heading); text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; border-radius: 2px; }
+.wrapper { width: 960px; margin: 0 auto; }
+.profile { position: fixed; top: 64px; width: 220px; text-align: center; max-height: calc(100dvh - 80px); overflow-y: auto; }
+.portrait-link { display: inline-block; margin: 20px 0 24px; border-radius: 50%; }
+.portrait { display: block; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; }
+h1, h2 { color: var(--heading); font-weight: 600; line-height: 1.1; }
+h1 { font-size: 28px; margin: 0 0 20px; }
+h2 { font-size: 26px; margin: 0 0 15px; }
+p { margin: 0 0 20px; }
+.affiliation { line-height: 1.6; margin-bottom: 18px; }
+.affiliation a { color: inherit; }
+.location { color: var(--muted); }
+.email { font-size: 15px; margin-bottom: 16px; overflow-wrap: anywhere; }
+.profile-links { display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 16px; line-height: 1.6; }
+.social-link { display: inline-flex; align-items: center; gap: 9px; min-height: 32px; }
+.social-link img { display: block; flex-shrink: 0; }
+.orcid-link { margin-top: 3px; }
+main { width: 650px; margin-left: 310px; padding: 64px 0 32px; }
+main:focus { outline: none; }
+section { margin-bottom: 27px; }
+ul { margin: 0 0 20px; padding-left: 24px; }
+.research-list { margin-bottom: 0; }
+.news-list li { margin-bottom: 6px; }
+strong { color: var(--strong); font-weight: 600; }
+.publication-note { font-size: 16px; }
+.publications { padding-left: 24px; }
+.publications li { padding-left: 1px; margin-bottom: 23px; }
+.publications h3 { color: var(--strong); font-size: inherit; font-weight: 600; line-height: 1.5; margin: 0; }
+.publications p { margin: 0; }
+.paper-links { white-space: normal; }
+.media { font-size: 16px; }
+footer { margin-top: 42px; font-size: 14px; color: var(--muted); }
+footer p { margin: 0; }
+.skip-link { position: fixed; z-index: 10; top: -100px; left: 16px; padding: 8px 14px; background: var(--background); border: 1px solid var(--link); }
+.skip-link:focus { top: 12px; }
+@media (max-width: 1000px) {
+  .wrapper { width: auto; margin: 0 28px; }
+  .profile { position: static; width: auto; max-height: none; overflow: visible; padding: 20px 0 28px; }
+  .portrait-link { margin: 10px 0 18px; }
+  .portrait { width: 125px; height: 125px; }
+  .affiliation { margin-bottom: 12px; }
+  main { width: 100%; max-width: 700px; padding: 28px 0 24px; margin: 0 auto; border-top: 1px solid var(--rule); }
+}
+@media (max-width: 480px) {
+  .wrapper { margin: 0 20px; }
+  .profile { padding-top: 12px; }
+  .portrait { width: 115px; height: 115px; }
+  h1 { margin-bottom: 12px; }
+  h2 { font-size: 25px; }
+  ul { padding-left: 21px; }
+}
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; --background: #20212b; --text: #dadbdf; --heading: #70c9f2; --link: #70c9f2; --strong: #eeeff0; --muted: #b2b3bc; --rule: #41434e; }
+  .social-link img { filter: invert(1); }
+}
+@media print {
+  :root { --background: #fff; --text: #444; --heading: #043361; --strong: #222; --link: #043361; }
+  body { font-size: 11pt; }
+  .wrapper { width: auto; margin: 0; }
+  .profile { position: static; max-height: none; overflow: visible; width: auto; padding: 0; margin-bottom: 20px; }
+  .portrait-link { margin: 0 0 10px; }
+  .portrait { width: 85px; height: 85px; }
+  main { width: auto; padding: 0; margin: 0; border: 0; }
+  article { break-inside: avoid; }
+  .skip-link { display: none; }
+}
